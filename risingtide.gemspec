@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["John Gerwin De las Alas"]
   spec.email         = ["iamgerwin@aim.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = "Rising tide Simple messaging gateway API."
+  spec.description   = "Rising tide sms gateway provider in the Philippines"
   spec.homepage      = "https://github.com/iamgerwin/risingtide.git"
   spec.license       = "MIT"
 

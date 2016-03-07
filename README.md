@@ -23,15 +23,15 @@ Or install it yourself as:
 ## Usage
 Initialize Sms
 
-    @risingtide = Risingtide::Sms.new(username, password, shortcode)
+    @risingtide = Risingtide::Sms.new(username, password, shortcode, usagetype, from_alias)
 
 Send out Sms
 
-    @risingtide.send_sms(to, message, usagetype, from_alias)
+    @risingtide.send_sms(to, message)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/risingtide. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/iamgerwin/risingtide. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

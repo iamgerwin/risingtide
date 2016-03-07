@@ -11,15 +11,17 @@ module Risingtide
       end
     end
 
-    attr_accessor :username, :password, :shortcode
+    attr_accessor :username, :password, :shortcode, :usagetype, :from_alias
 
-    def initialize(username = nil, password = nil, shortcode = nil)
+    def initialize(username = nil, password = nil, shortcode = nil, usagetype = nil, from_alias = nil)
       @username = username
       @password = password
       @shortcode = shortcode
+      @usagetype = usagetype
+      @from_alias = from_alias
     end
 
-    def send_sms(to, body, usagetype, from_alias)
+    def send_sms(to, body, time = Time.now)
       url = URI("http://api.wyrls.net/documents")
 
       http = Net::HTTP.new(url.host, url.port)
@@ -30,11 +32,11 @@ module Risingtide
       request["cache-control"] = 'no-cache'
       request.body = {
                       from: shortcode,
-                      to: to,
+                      to: to.gsub(/[+]/, ""),
                       content_type: "text/plain",
                       body: body,
                       usagetype: usagetype,
-                      date: Time.now,
+                      date: time,
                       from_alias: from_alias,
                      }.to_json
 

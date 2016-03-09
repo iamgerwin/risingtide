@@ -1,6 +1,7 @@
 require 'uri'
 require 'net/http'
 require 'json'
+require 'time'
 
 module Risingtide
   class Sms
@@ -21,7 +22,7 @@ module Risingtide
       @from_alias = from_alias
     end
 
-    def send_sms(to, body, time = Time.now)
+    def send_sms(to, body, time = Time.now.iso8601)
       url = URI("http://api.wyrls.net/documents")
 
       http = Net::HTTP.new(url.host, url.port)
